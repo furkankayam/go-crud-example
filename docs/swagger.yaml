@@ -1,0 +1,38 @@
+basePath: /
+definitions:
+  models.Post:
+    type: object
+host: localhost:3000
+info:
+  contact:
+    name: furkan
+  description: this is sample
+  license: {}
+  title: Post Swagger
+  version: "1.0"
+paths:
+  /posts:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new post in the database.
+      parameters:
+      - description: Post data
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/models.Post'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: The created post
+          schema:
+            $ref: '#/definitions/models.Post'
+      summary: Create a new post
+      tags:
+      - posts
+schemes:
+- http
+swagger: "2.0"
